@@ -1,0 +1,37 @@
+buildscript {
+	ext {		
+		springBootVersion = '2.4.0'
+	}
+
+	repositories {
+		maven { url "https://plugins.gradle.org/m2/" }
+		gradlePluginPortal()
+        jcenter()
+	}	
+}
+
+	plugins {
+	id 'org.springframework.boot' version '2.4.2'	
+	id 'java'
+	id 'idea'
+}
+
+group = 'com.playsafe'
+version = '1.0.0'
+sourceCompatibility = '8'
+
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-web'    	
+}
+
+
+sourceSets {	
+	main.java.srcDirs += 'src/main/java'    
+}
