@@ -24,4 +24,29 @@ public class ConversionController {
         logger.info("export completed in ", ((System.currentTimeMillis() - ts) / 1000) + " seconds");
         return result;
     }
+
+    @GetMapping("/conversion/ktoc")
+    public double ktoc(@RequestParam Double kelvin) {
+        Long ts = System.currentTimeMillis();
+        double result = convertService.ktoc(kelvin);
+        logger.info("export completed in ", ((System.currentTimeMillis() - ts) / 1000) + " seconds");
+        return result;
+    }
+
+    @GetMapping("/conversion/mtok")
+    public double mtok(@RequestParam Double miles) {
+        Long ts = System.currentTimeMillis();
+        double result = convertService.mtok(miles);
+        logger.info("export completed in ", ((System.currentTimeMillis() - ts) / 1000) + " seconds");
+        return result;
+    }
+
+    @GetMapping("/conversion/ktom")
+    public double ktom(@RequestParam Double kilometers) {
+        Long ts = System.currentTimeMillis();
+        double result = convertService.ktom(kilometers);
+        logger.info("export completed in ", ((System.currentTimeMillis() - ts) / 1000) + " seconds");
+        return result;
+    }
+    
 }
